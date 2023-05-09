@@ -1,6 +1,6 @@
 # 📗 Alsong Dalsong : 일기를 쓰면, 노래를 추천해드려요
 ### 빅데이터 추천 프로젝트
-<img src="./README.assets/인트로.PNG" alt="AlsongDalsong" width = "80%"/>
+<img src="./README.assets/인트로.png" alt="AlsongDalsong" width = "80%"/>
 
 
 ## :pushpin: 목차
@@ -27,9 +27,9 @@
 
 <img src="./README.assets/인트로.png" alt="AlsongDalsong" width = "90%"/>
 
-<img src="./README.assets/인트로1.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/인트로1.png" alt="AlsongDalsong" width = "90%"/>
 
-<img src="./README.assets/인트로2.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/인트로2.png" alt="AlsongDalsong" width = "90%"/>
 
 <br>
 
@@ -39,7 +39,7 @@
    - 사용자는 직접 감정을 선택하거나 분석받기를 선택할 수 있습니다. 
    - 사진 업로드가 가능합니다.
 
-<img src="./README.assets/일기작성.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/일기작성.png" alt="AlsongDalsong" width = "90%"/>
 
 <br>
 
@@ -49,9 +49,9 @@
    - 캘린더로 월별로 작성했던 일기들의 감정 상태를 확인할 수 있습니다.
    - 월별로 정리된 일기 리스트 중 감정 / 시간대 별로 분류된 일기를 미리 확인할 수 있습니다.
 
-<img src="./README.assets/calender.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/calender.png" alt="AlsongDalsong" width = "90%"/>
 
-<img src="./README.assets/모아보기.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/모아보기.png" alt="AlsongDalsong" width = "90%"/>
 
 <br>
 
@@ -61,7 +61,7 @@
    - 스티커 상점에서 구매한 스티커 목록을 확인할 수 있습니다.
    - 취향대로 자유롭게 일기장을 꾸며볼 수 있습니다. 
 
-<img src="./README.assets/스티커.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/스티커.png" alt="AlsongDalsong" width = "90%"/>
 
 <br>
 
@@ -71,11 +71,11 @@
    - 좋아요 눌렀던 음악 감정별 플레이리스트 확인이 가능합니다.
    - 감정에 따라 음악 플레이리스트 추천이 가능합니다.
 
-<img src="./README.assets/마플.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/마플.png" alt="AlsongDalsong" width = "90%"/>
 
-<img src="./README.assets/플추.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/플추.png" alt="AlsongDalsong" width = "90%"/>
 
-<img src="./README.assets/음추.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/음추.png" alt="AlsongDalsong" width = "90%"/>
 
 <br>
 
@@ -85,7 +85,7 @@
    - 주간, 월간, 연간으로 감정 상태 횟수 분석이 가능합니다.
    - 감정에 따른 음악 분위기 설정이 가능합니다.
 
-<img src="./README.assets/마이페이지.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/마이페이지.png" alt="AlsongDalsong" width = "90%"/>
 
 
 
@@ -120,11 +120,11 @@
 
 ## ERD
 
-<img src="./assets/image/erd.png" alt="AlsongDalsong" width = "80%"/>
+<img src="./README.assets/erd.png" alt="AlsongDalsong" width = "90%"/>
 
 ## 시스템 아키텍처
 
-<img src="./assets/image/시스템_아키텍처.png" alt="AlsongDalsong" width = "80%"/>
+<img src="./README.assets/아키텍처.png" alt="AlsongDalsong" width = "90%"/>
 
 </br>
 
