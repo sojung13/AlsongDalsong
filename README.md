@@ -25,7 +25,7 @@
 1. 서비스 소개 화면
    - 서비스 첫 화면에서 사용자는 스크롤하여 하단으로 내리며 간략한 소개를 인터랙티브 디자인으로 확인할 수 있습니다.
 
-<img src="./README.assets/인트로.PNG" alt="AlsongDalsong" width = "90%"/>
+<img src="./README.assets/인트로.png" alt="AlsongDalsong" width = "90%"/>
 
 <img src="./README.assets/인트로1.PNG" alt="AlsongDalsong" width = "90%"/>
 
