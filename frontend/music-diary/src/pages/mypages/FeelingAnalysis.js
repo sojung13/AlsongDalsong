@@ -148,8 +148,6 @@ const FeelingAnalysis = () => {
     getMonthDiary(curDate.getMonth()+1, curDate.getFullYear())
     .then((res)=> {
       setMonthData(res.data)
-      // console.log('이번달의 일기 개수는',res.data)
-      // console.log('이번달 감정 갯수',monthHappy,monthSad,monthAnxious,monthAngry,monthNormal,monthDepressed)
     })
     .catch((e)=> {
       console.log('err',e)
@@ -180,8 +178,6 @@ const FeelingAnalysis = () => {
   const [sixMonthData, setSixMonthData] = useState([])
   useEffect(()=> {
     setSixMonthData(fullData.filter((it)=> getDateDiff(it.created_date, sixMonthAgo) < 150))
-    // console.log('6개월 데이터',sixMonthData)
-    // console.log('6개월 데이터 개수', sixHappy,sixSad,sixAnxious,sixAngry,sixNormal,sixDepressed)
   },[nowClick])
   const sixHappy = sixMonthData.filter((it)=> it.emotion == '기쁨').length
   const sixSad = sixMonthData.filter((it)=> it.emotion == '슬픔').length

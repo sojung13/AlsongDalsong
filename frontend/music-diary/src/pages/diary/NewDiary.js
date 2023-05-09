@@ -1,10 +1,6 @@
 import MainNote from "../mainpages/MainNote";
-import {useNavigate} from 'react-router-dom'
-import { makePlaylist } from "../../api/diaryApi"
-
 import './NewDiary.css'
 import DiaryEditor from "../../components/editor/DiaryEditor";
-
 
 const NewDiary = () => {
     return(

@@ -3,16 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './MainPlaylist.css'
 import { useNavigate } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
-
 import { useSelector } from "react-redux";
-import { setNormalChoiceValue } from "../../store/store";
-import { useDispatch } from "react-redux";
-
 import { getUserInfoApi } from '../../api/userApi'
-
-import toggleClass from 'jquery'
-
-import $ from 'jquery'
 
 const MainPlaylist = () => {
     const navigate = useNavigate();

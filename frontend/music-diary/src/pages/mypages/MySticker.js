@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import "../../css/mypages/MySticker.css";
-
-import { BiStore } from "react-icons/bi"; // 상점 이모지
 import { getUserStickerListApi } from "../../api/stickerApi"; // 해당 유저의 스티커팩 리스트 조회
 import MainNote from "../mainpages/MainNote";
-// import StickerItem from '../../components/sticker/StickerItem'
 import MyStickerItem from "../../components/sticker/MyStickerItem";
 
 function MySticker() {

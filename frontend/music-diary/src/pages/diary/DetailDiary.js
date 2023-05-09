@@ -2,16 +2,13 @@ import MainNote from "../mainpages/MainNote";
 
 import {
   useState,
-  useContext,
   useEffect,
   useRef,
   createRef,
   useCallback,
 } from "react";
 import { json, useNavigate, useParams } from "react-router-dom";
-import { getStringDate } from "../../util/date";
 import {
-  getMonthDiary,
   deleteDiary,
   makeBookmark,
   deleteBookmark,
@@ -32,20 +29,11 @@ import { useDispatch } from "react-redux";
 
 //  konva
 import { Image as KonvaImage, Layer, Stage } from "react-konva";
-import useImage from "use-image";
 
 import { IndividualSticker } from "../sticker-data/individualSticker.tsx";
-import { stickersData } from "../sticker-data/stickers.data.ts";
 
 // import "./styles.css"
 import {BiCaretDown } from 'react-icons/bi'
-
-// lottie
-import Lottie from 'lottie-react'
-// import bookmark from '../../store/lottie/bookmark.json'
-import BookmarkAnimation from "../../store/lottie/BookmarkAnimation";
-import { FcMusic } from 'react-icons/fc'
-import {FcSynchronize } from 'react-icons/fc'
 
 
 import Swal from "sweetalert2";
@@ -65,11 +53,6 @@ const DetailDiary = () => {
   const [date, setDate] = useState("");
   const [bookmark, setBookmark] = useState(false);
   const [returnImages, setReturnImages] = useState([]);
-  const [returnImage, setReturnImage] = useState();
-
-  const [image, setImage] = useState("");
-
-  // const [monthData, setmonthData] = useState([]); // 이달의 전체 일기 정보
 
   const strDate = new Date(date).toLocaleDateString();
 
@@ -87,11 +70,8 @@ const DetailDiary = () => {
   const [newMusic, setNewMusic] = useState([]);
 
   // konva //
-  const [background] = useImage("example-image.jpg");
   const [images, setImages] = useState([]);
-
   const [stickerInfo, setStickerInfo] = useState([]);
-  const [test, setTest] = useState({});
   const bookmarkRef = useRef();
 
   // stickers
@@ -122,18 +102,6 @@ const DetailDiary = () => {
     }
   };
 
-  // 달 조회를 해야하는 것이 아니다
-  // useEffect(() => {
-  //   getMonthDiary(new Date().getMonth() + 1, new Date().getFullYear())
-  //     .then((res) => {
-  //       setmonthData(res.data);
-  //       console.log("과!연", res.data);
-  //       console.log("이달의 전체 일기 일단 모으기", monthData);
-  //     })
-  //     .catch((e) => {
-  //       console.log("err", e);
-  //     });
-  // }, []);
 
 // 전체 일기를 가져와야 한다
 const [totalDiary, setTotalDiary] = useState([])
@@ -156,21 +124,11 @@ console.log(totalDiary)
     // 유저가 소유한 스티커팩 조회
     getUserStickerListApi(user_id)
       .then((res) => {
-        // console.log("사용자가 소유한 스티커팩 정보:", JSON.stringify(res.data));
-        // console.log("***************************************************");
-        // setStickerInfo(res.data);
         let tmp = [];
         res.data.map((ele, i) => {
           tmp.push(ele.stickerpacks);
-
-          // console.log(tmp)
         });
-        // console.log("최종 tmp:", JSON.stringify(tmp));
         setStickerInfo(tmp);
-
-        // image_url
-        // const image_url = res.data[0].stickers[0].image_url;
-        // console.log(data.stickers[0].image_url)
       })
       .catch((err) => {
         console.log(JSON.stringify(err.data));
@@ -183,8 +141,6 @@ console.log(totalDiary)
 
       if (targetDiary) {
         // 일기가 존재할 때
-        const t = targetDiary.images;
-
         setTitle(targetDiary.title);
         setContent(targetDiary.content);
         setEmotion(targetDiary.emotion);
@@ -250,11 +206,8 @@ console.log(totalDiary)
       .catch((e) => {
         console.log("err", e);
       });
-    
   }, newMusic)
   
-  
-
   const likeMusic = (music_id, i) => {
     const txt = document.getElementById("heart" + i);
     if (txt.innerText === "♥") {
@@ -315,12 +268,9 @@ console.log(totalDiary)
       }
     })
   };
-
-  const targetDiary = totalDiary.find((it) => parseInt(it.id) === parseInt(id));
  
-  // 북마크 다루기 ////////////////////////////////////////
+  // 북마크 다루기
   const handleBookmark = () => {
-    // console.log("RETURN IMAGES:", returnImages[0].image_url);
     if (storeBookmark === false) {
       console.log("북마크 state:", bookmark);
       dispatch(setDiaryBookmarkValue(true));
@@ -395,7 +345,6 @@ console.log(totalDiary)
       tmp.push(element);
     });
 
-    // console.log("origin:", JSON.stringify(originStickers));
     originStickers.map((ele, i) => {
       let origin = {
         sticker_id: originStickers[i].sticker.id,
@@ -421,7 +370,6 @@ console.log(totalDiary)
       .then((res) => {
         console.log("되면 좋겟당");
         console.log(JSON.stringify(res.data));
-        // alert("스티커 저장완료")
       })
       .catch((err) => {});
   };
@@ -520,7 +468,6 @@ console.log(totalDiary)
             <div className="fix-top">
               <h2 className="title">{title}</h2>
               <p className="date">{strDate}</p>
-            {/* <img src={rightEmotion(emotion)} className='emotion'></img> */}
             </div>
             <h5 className="content">{content}</h5>
 
@@ -552,7 +499,6 @@ console.log(totalDiary)
 
         {/* 일기별 플레이리스트 */}
         <div className="detail-diary-playlist">
-        {/* <p onClick = {()=>remakePlaylist()} style={{cursor: "pointer"}}>⟳</p> */}
         <iframe
             className="playlist-iframe"
 
@@ -605,7 +551,6 @@ console.log(totalDiary)
                       </div>
 
                       <div className="artist-wrapper">
-                        {/* <div>{ele.artist} <FcMusic style={{marginTop:"-0.5vh"}} /></div> */}
                         <div>{ele.artist}</div>
                       </div>
 
@@ -714,8 +659,6 @@ console.log(totalDiary)
                       className="delete-sticker-btn"
                       style={{
                         marginLeft: `${ele.sticker_x}px`,
-                       
-           
                       }}
                       onClick={() => deleteSticker(ele.id)}
                     >
@@ -760,10 +703,6 @@ console.log(totalDiary)
 
         </div>
         <div className="sticker-btn-wrapper">
-            {/* <div className="sticker-save-btn" onClick={onSaveStickerPos} >
-              스티커 저장
-            </div> */}
-
             <div className="sticker-edit-btn" onClick={onEditStickerPos}>
               스티커 삭제
             </div>
@@ -822,15 +761,6 @@ console.log(totalDiary)
             </>
           );
         })}
-        {/* 스티커 위치 저장 완료 버튼,,@ */}
-        {/* <button onClick={onSaveStickerPos} className="sticker-save-btn">
-          저장!
-        </button> */}
-
-        {/* 스티커 삭제 활성화하기 */}
-        {/* <div className="sticker-edit-btn" onClick={onEditStickerPos}>
-          수정
-        </div> */}
       </div>
     </>
   )
@@ -844,8 +774,6 @@ console.log(totalDiary)
       <div>
         <MainNote className="main-note"></MainNote>
       </div>
-
-      {/* </div> */}
     </>
   );
 };

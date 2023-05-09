@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import './MainNote.css'
 import { useNavigate } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
-
 import { useSelector } from "react-redux";
-import { setNormalChoiceValue } from "../../store/store";
-import { useDispatch } from "react-redux";
-
 import { getUserInfoApi } from '../../api/userApi'
 
-import toggleClass from 'jquery'
-
-import $ from 'jquery'
 
 const MainNote = () => {
     const navigate = useNavigate();
@@ -22,7 +14,6 @@ const MainNote = () => {
         `${process.env.PUBLIC_URL}/assets/img/default-profile-img.png`
       );
 
-    const [imageResult, setImageResult] = useState("");
     
     const storeUserName = useSelector((state)=>{
         return state.user.username
@@ -35,10 +26,6 @@ const MainNote = () => {
         navigate('/')
     }
 
-    const onMoveCalender = () =>{
-        navigate('/calender')
-    }
-    
     useEffect(()=>{
         const user_id = sessionStorage.getItem("user_id")
         
@@ -82,24 +69,6 @@ const MainNote = () => {
             <h5 style={{color:"black"}}>{userName}</h5>
 
             </div>
-
-        {/* {
-            userImage === "NULL" || userImage === null 
-            ? (
-                <img src={previewUrl} alt=""
-                    className='profile-image'
-                    style={{width:"7vw"}}
-                />
-            )
-            : (
-                <img src={"https:///"+ userImage} alt=""
-                    className='profile-image'
-                    style={{width:"7vw"}}
-                />
-            )
-        }
-
-            <h5 style={{color:"black"}}>{userName}</h5> */}
 
             <div className='profile-menu'>
                 <div className="menu-diary" onClick={()=>{navigate('/calender')}}>

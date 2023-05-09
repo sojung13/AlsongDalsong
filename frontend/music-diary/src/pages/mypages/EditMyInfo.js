@@ -1,30 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MainNote from "../mainpages/MainNote";
-
-import { ResponsiveRadar } from "@nivo/radar";
-import Form from "react-bootstrap/Form";
-
 import Button from "../../components/Common/Button";
-
-import axios from "axios";
-// redux store
-import { useSelector } from "react-redux";
-import {
-  setNormalChoiceValue,
-  setSadChoiceValue,
-  setAngryChoiceValue,
-  setDepressedChoiceValue,
-} from "../../store/store";
-import { useDispatch } from "react-redux";
 import {
   patchUserInfoApi,
   deleteUserInfoApi,
   patchUserPasswordApi,
 } from "../../api/userApi";
 import {
-  getMonthDiary,
-  getDiaryListApi,
   getDiaryImage,
 } from "../../api/diaryApi";
 
@@ -295,17 +278,6 @@ function EditMyInfo() {
                     </label>
                   </div>
 
-                  {/* <div className="find-file-btn" for="file">
-                  <Button
-                    name="파일찾기"
-                    style={{ width: "110px", fontSize: "15px"}}
-                    color="#7791A5"
-                    hcolor="#b3cbda"
-                    size="sm"
-                    onClick="">
-                  </Button>
-                </div> */}
-
                   <Button
                     name="프로필 변경"
                     style={{
@@ -371,15 +343,6 @@ function EditMyInfo() {
                     onClick={onEditUserPasswordBtn}
                   />
                 </div>
-
-                {/* <div className="quit-btn-wrapper">
-                  <Button
-                    className="quit-btn"
-                    name="회원탈퇴"
-                    color="#464646"
-                    size="sm"
-                  />
-                </div> */}
               </div>
               {/*  */}
               <div className="quit-btn-wrapper">

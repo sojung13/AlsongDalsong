@@ -52,9 +52,6 @@ function MainLogin() {
       .then((res) => {
         console.log("로그인한 유저 정보:", JSON.stringify(res.data));
 
-
-
-        
         // access 토큰, refresh 토큰, user id 정보 담기
           sessionStorage.setItem("accessToken", res.data.data.token.access_token)
           sessionStorage.setItem("refreshToken", res.data.data.token.refresh_token)
@@ -65,8 +62,6 @@ function MainLogin() {
           dispatch(setSadChoiceValue(res.data.data.sad))
           dispatch(setAngryChoiceValue(res.data.data.angry))
           dispatch(setDepressedChoiceValue(res.data.data.depressed))
-
-
           navigate("/calender");
       })
       .catch((err) => {
@@ -82,7 +77,6 @@ function MainLogin() {
 
 
   };
-
 
 
   // 구글 로그인 버튼 클릭 후
