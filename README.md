@@ -76,9 +76,6 @@
 <img src="./README.assets/플추.png" alt="AlsongDalsong" width = "90%"/>
 
 <img src="./README.assets/음추.png" alt="AlsongDalsong" width = "90%"/>
-
-<br>
-
 </br>
 
 6. 마이페이지
